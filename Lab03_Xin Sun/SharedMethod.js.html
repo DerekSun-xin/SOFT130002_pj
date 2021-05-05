@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>SharedMethod.js</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #cc7832;}
+.s2 { color: #6a8759;}
+.s3 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+SharedMethod.js</font>
+</center></td></tr></table>
+<pre>
+<span class="s1">var </span><span class="s0">i</span><span class="s1">;</span>
+<span class="s1">var </span><span class="s0">page = [</span><span class="s2">&quot;首页&quot;</span><span class="s1">,</span><span class="s2">&quot;搜索&quot;</span><span class="s1">,</span><span class="s2">&quot;详情&quot;</span><span class="s1">,</span><span class="s2">&quot;登陆&quot;</span><span class="s1">,</span><span class="s2">&quot;注册&quot;</span><span class="s0">]</span><span class="s1">;</span>
+<span class="s1">for</span><span class="s0">(i=</span><span class="s3">0</span><span class="s1">;</span><span class="s0">i&lt;page.length</span><span class="s1">;</span><span class="s0">i++){</span>
+    <span class="s0">localStorage.setItem(i.toString()</span><span class="s1">,</span><span class="s0">page[i])</span><span class="s1">;</span>
+<span class="s0">}</span>
+<span class="s1">var </span><span class="s0">sum = </span><span class="s2">&quot;&quot;</span><span class="s1">;</span>
+<span class="s1">var </span><span class="s0">j</span><span class="s1">;</span>
+<span class="s1">if</span><span class="s0">(window.location.pathname==</span><span class="s2">&quot;/Lab1/Front%20Page.html&quot;</span><span class="s0">){</span>
+    <span class="s0">j=</span><span class="s2">&quot;0&quot;</span><span class="s1">;</span>
+<span class="s0">}</span><span class="s1">else if</span><span class="s0">(window.location.pathname==</span><span class="s2">&quot;/Lab1/SearchPage.html&quot;</span><span class="s0">){</span>
+    <span class="s0">j=</span><span class="s2">&quot;1&quot;</span><span class="s1">;</span>
+<span class="s0">}</span><span class="s1">else if</span><span class="s0">(window.location.pathname==</span><span class="s2">&quot;/Lab1/Show%20Page.html&quot;</span><span class="s0">){</span>
+    <span class="s0">j=</span><span class="s2">&quot;2&quot;</span><span class="s1">;</span>
+<span class="s0">}</span><span class="s1">else if</span><span class="s0">(window.location.pathname==</span><span class="s2">&quot;/Lab1/LogInPage.html&quot;</span><span class="s0">){</span>
+    <span class="s0">j=</span><span class="s2">&quot;3&quot;</span><span class="s1">;</span>
+<span class="s0">}</span><span class="s1">else if</span><span class="s0">(window.location.pathname==</span><span class="s2">&quot;/Lab1/EnrollPage.html&quot;</span><span class="s0">){</span>
+    <span class="s0">j=</span><span class="s2">&quot;4&quot;</span><span class="s1">;</span>
+<span class="s0">}</span>
+
+    <span class="s0">sum+= localStorage.getItem(j)+</span><span class="s2">&quot;&gt;&quot;</span><span class="s1">;</span>
+<span class="s0">document.getElementById(</span><span class="s2">&quot;footprint&quot;</span><span class="s0">).innerHTML= sum</span><span class="s1">;</span></pre>
+</body>
+</html>

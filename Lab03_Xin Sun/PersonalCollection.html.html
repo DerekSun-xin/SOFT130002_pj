@@ -1,0 +1,166 @@
+<html>
+<head>
+<title>PersonalCollection.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #e8bf6a;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #bababa;}
+.s3 { color: #a5c261;}
+.s4 { color: #a9b7c6;}
+.s5 { color: #cc7832;}
+.s6 { color: #6897bb;}
+.s7 { color: #808080;}
+.s8 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+PersonalCollection.html</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;!DOCTYPE </span><span class="s2">html</span><span class="s0">&gt;</span>
+<span class="s0">&lt;html </span><span class="s2">lang</span><span class="s3">=&quot;en&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;head&gt;</span>
+    <span class="s0">&lt;meta </span><span class="s2">charset</span><span class="s3">=&quot;UTF-8&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;title&gt;</span><span class="s4">PersonalCollection</span><span class="s0">&lt;/title&gt;</span>
+
+    <span class="s0">&lt;link </span><span class="s2">href</span><span class="s3">=&quot;LayoutStyle.css&quot; </span><span class="s2">rel</span><span class="s3">=&quot;stylesheet&quot; </span><span class="s2">type</span><span class="s3">=&quot;text/css&quot;</span><span class="s0">/&gt;</span>
+    <span class="s0">&lt;style&gt;</span>
+
+        <span class="s0">p</span><span class="s4">.</span><span class="s0">pclass</span><span class="s4">{</span>
+            <span class="s2">text-align</span><span class="s4">: </span><span class="s3">center</span><span class="s5">;</span>
+            <span class="s2">max-width</span><span class="s4">: </span><span class="s6">450</span><span class="s3">px</span><span class="s5">;</span>
+        <span class="s4">}</span>
+
+        <span class="s0">th</span><span class="s5">,</span><span class="s0">td</span><span class="s4">{</span>
+            <span class="s2">text-align</span><span class="s4">: </span><span class="s3">center</span><span class="s5">;</span>
+        <span class="s4">}</span>
+    <span class="s0">&lt;/style&gt;</span>
+
+<span class="s0">&lt;/head&gt;</span>
+<span class="s0">&lt;body&gt;</span>
+    <span class="s0">&lt;nav </span><span class="s2">class</span><span class="s3">=&quot;position&quot;</span><span class="s0">&gt;</span>
+     <span class="s0">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;Front%20Page.html&quot;</span><span class="s0">&gt;</span><span class="s4">首页</span><span class="s0">&lt;/a&gt;</span>
+     <span class="s0">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;SearchPage.html&quot;</span><span class="s0">&gt;</span><span class="s4">搜索</span><span class="s0">&lt;/a&gt;</span>
+     <span class="s0">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;Show%20Page.html&quot;</span><span class="s0">&gt;</span><span class="s4">详情</span><span class="s0">&lt;/a&gt;</span>
+     <span class="s0">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;LogInPage.html&quot;</span><span class="s0">&gt;</span><span class="s4">登陆</span><span class="s0">&lt;/a&gt;</span>
+     <span class="s0">&lt;a </span><span class="s2">href</span><span class="s3">=&quot;EnrollPage.html&quot;</span><span class="s0">&gt;</span><span class="s4">注册</span><span class="s0">&lt;/a&gt;</span>
+    <span class="s0">&lt;/nav&gt;</span>
+    <span class="s0">&lt;p </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">font-style</span><span class="s4">: </span><span class="s3">oblique&quot;</span><span class="s0">&gt;&lt;strong&gt;</span><span class="s4">ArtStore</span><span class="s0">&lt;/strong&gt;&lt;/p&gt;</span>
+    <span class="s0">&lt;p </span><span class="s2">id</span><span class="s3">=&quot;footprint&quot;</span><span class="s0">&gt;&lt;/p&gt;</span>
+    <span class="s0">&lt;hr&gt;</span>
+
+    <span class="s0">&lt;form </span><span class="s2">class</span><span class="s3">=&quot;formclass&quot; </span><span class="s2">method</span><span class="s3">=&quot;post&quot; </span><span class="s2">name</span><span class="s3">=&quot;SearchColumn&quot; </span><span class="s2">autocomplete</span><span class="s3">=&quot;off&quot; </span><span class="s2">action</span><span class="s3">=&quot;Show%20Page.html&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;p </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">color</span><span class="s4">: </span><span class="s3">orange</span><span class="s5">; </span><span class="s2">text-align</span><span class="s4">:</span><span class="s3">left&quot;</span><span class="s0">&gt;</span><span class="s4">My Shopping Cart</span><span class="s0">&lt;/p&gt;</span>
+            <span class="s0">&lt;input </span><span class="s2">type</span><span class="s3">=&quot;search&quot; </span><span class="s2">placeholder</span><span class="s3">=&quot;SearchBar&quot; </span><span class="s2">name</span><span class="s3">=&quot;Search&quot; </span><span class="s2">size</span><span class="s3">=&quot;50&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;/form&gt;</span>
+
+    <span class="s0">&lt;hr&gt;</span>
+    <span class="s0">&lt;h1 </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">text-align</span><span class="s4">: </span><span class="s3">center&quot;</span><span class="s0">&gt;</span><span class="s4">个人收藏</span><span class="s0">&lt;/h1&gt;</span>
+    <span class="s0">&lt;table </span><span class="s2">id</span><span class="s3">=&quot;myTable&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;tr&gt;</span>
+            <span class="s0">&lt;td&gt;&lt;a </span><span class="s2">href</span><span class="s3">=&quot;Show%20Page.html&quot;</span><span class="s0">&gt;&lt;img </span><span class="s2">src</span><span class="s3">=&quot;img/29.jpg&quot; </span><span class="s2">width</span><span class="s3">=300px </span><span class="s2">height</span><span class="s3">=300px</span><span class="s0">&gt;&lt;/a&gt;&lt;/td&gt;</span>
+            <span class="s0">&lt;td&gt;</span><span class="s4">Musicos Con Mascaras Carpet</span><span class="s0">&lt;/td&gt;</span>
+            <span class="s0">&lt;td&gt;</span><span class="s4">Pablo Picasso</span><span class="s0">&lt;/td&gt;</span>
+            <span class="s0">&lt;td&gt;</span><span class="s4">This bold and surrealistic painting depicts a group of musicians with their tired pup using sharp-edged geometric shapes and stunning light effects</span><span class="s0">&lt;/td&gt;</span>
+            <span class="s0">&lt;td&gt; &lt;button </span><span class="s2">onclick</span><span class="s3">=&quot;</span><span class="s1">deleteRow(</span><span class="s5">this</span><span class="s4">)</span><span class="s3">&quot;</span><span class="s0">&gt;</span><span class="s4">DELETE IT</span><span class="s0">&lt;/button&gt;&lt;/td&gt;</span>
+        <span class="s0">&lt;/tr&gt;</span>
+        <span class="s0">&lt;tr&gt;</span>
+            <span class="s0">&lt;td&gt; &lt;a </span><span class="s2">href</span><span class="s3">=&quot;Show%20Page.html&quot;</span><span class="s0">&gt;&lt;img </span><span class="s2">src</span><span class="s3">=&quot;img/179.jpg&quot; </span><span class="s2">width</span><span class="s3">=300px </span><span class="s2">height</span><span class="s3">=300px</span><span class="s0">&gt;&lt;/a&gt;&lt;/td&gt;</span>
+            <span class="s0">&lt;td&gt;</span><span class="s4">Nocturne in Black and Gold - The Falling Rocket</span><span class="s0">&lt;/td&gt;</span>
+            <span class="s0">&lt;td&gt;</span><span class="s4">James Abbott McNeill Whistler</span><span class="s0">&lt;/td&gt;</span>
+            <span class="s0">&lt;td&gt;</span><span class="s4">This painting exemplified the Art for art's sake movement</span><span class="s0">&lt;/td&gt;</span>
+            <span class="s0">&lt;td&gt; &lt;button </span><span class="s2">onclick</span><span class="s3">=&quot;</span><span class="s1">deleteRow(</span><span class="s5">this</span><span class="s4">)</span><span class="s3">&quot;</span><span class="s0">&gt;</span><span class="s4">DELETE IT</span><span class="s0">&lt;/button&gt;&lt;/td&gt;</span>
+        <span class="s0">&lt;/tr&gt;</span>
+        <span class="s0">&lt;tr&gt;</span>
+            <span class="s0">&lt;td&gt; &lt;a </span><span class="s2">href</span><span class="s3">=&quot;Show%20Page.html&quot;</span><span class="s0">&gt;&lt;img </span><span class="s2">src</span><span class="s3">=&quot;img/60.jpg&quot; </span><span class="s2">width </span><span class="s3">= 300px </span><span class="s2">height </span><span class="s3">= 300px</span><span class="s0">&gt;&lt;/a&gt;&lt;/td&gt;</span>
+            <span class="s0">&lt;td&gt;</span><span class="s4">Sunflowers</span><span class="s0">&lt;/td&gt;</span>
+            <span class="s0">&lt;td&gt;</span><span class="s4">Van Gogh</span><span class="s0">&lt;/td&gt;</span>
+            <span class="s0">&lt;td&gt;</span><span class="s4">He demonstrated that it was possible to create an image with numerous variations of a single color,</span>
+                <span class="s4">without any lose of eloquence</span><span class="s0">&lt;/td&gt;</span>
+            <span class="s0">&lt;td&gt; &lt;button </span><span class="s2">onclick</span><span class="s3">=&quot;</span><span class="s1">deleteRow(</span><span class="s5">this</span><span class="s4">)</span><span class="s3">&quot;</span><span class="s0">&gt;</span><span class="s4">DELETE IT</span><span class="s0">&lt;/button&gt;&lt;/td&gt;</span>
+        <span class="s0">&lt;/tr&gt;</span>
+    <span class="s0">&lt;/table&gt;</span>
+
+  <span class="s7">&lt;!--</span>
+    <span class="s7">&lt;table style=&quot;width:100%&quot;&gt; 
+        &lt;tr&gt; 
+            &lt;td&gt; &lt;a href=&quot;Show%20Page.html&quot;&gt;&lt;img src=&quot;img/29.jpg&quot; width=450px height=500px&gt;&lt;/a&gt;&lt;/td&gt; 
+            &lt;td&gt; &lt;a href=&quot;Show%20Page.html&quot;&gt;&lt;img src=&quot;img/179.jpg&quot; width=450px height=500px&gt;&lt;/a&gt;&lt;/td&gt; 
+            &lt;td&gt; &lt;a href=&quot;Show%20Page.html&quot;&gt;&lt;img src=&quot;img/60.jpg&quot; width = 450px height = 500px&gt;&lt;/a&gt;&lt;/td&gt; 
+ 
+        &lt;/tr&gt; 
+        &lt;tr&gt; 
+            &lt;td&gt;&lt;p class=&quot;pclass&quot;&gt;Musicos Con Mascaras Carpet&lt;/p&gt;&lt;/td&gt; 
+            &lt;td&gt;&lt;p class=&quot;pclass&quot;&gt;Nocturne in Black and Gold - The Falling Rocket&lt;/p&gt;&lt;/td&gt; 
+            &lt;td&gt;&lt;p class=&quot;pclass&quot;&gt;Sunflowers&lt;/p&gt;&lt;/td&gt; 
+ 
+        &lt;/tr&gt; 
+        &lt;tr&gt; 
+            &lt;td&gt;&lt;p class=&quot;pclass&quot;&gt;Pablo Picasso&lt;/p&gt;&lt;/td&gt; 
+            &lt;td&gt;&lt;p class=&quot;pclass&quot;&gt;James Abbott McNeill Whistler&lt;/p&gt;&lt;/td&gt; 
+            &lt;td&gt;&lt;p class=&quot;pclass&quot;&gt;Van Gogh&lt;/p&gt;&lt;/td&gt; 
+ 
+        &lt;/tr&gt; 
+        &lt;tr&gt; 
+            &lt;td&gt;&lt;p class=&quot;pclass&quot;&gt;This bold and surrealistic painting depicts a group of musicians with their tired pup using sharp-edged geometric shapes and stunning light effects&lt;/p&gt;&lt;/td&gt; 
+            &lt;td&gt;&lt;p class=&quot;pclass&quot;&gt;This painting exemplified the Art for art's sake movement&lt;/p&gt;&lt;/td&gt; 
+            &lt;td&gt;&lt;p class=&quot;pclass&quot;&gt;He demonstrated that it was possible to create an image with numerous variations of a single color, 
+                without any lose of eloquence&lt;/p&gt;&lt;/td&gt; 
+ 
+        &lt;/tr&gt; 
+        &lt;tr style=&quot;text-align: center&quot;&gt; 
+            &lt;td&gt; &lt;button&gt;DELETE IT&lt;/button&gt;&lt;/td&gt; 
+            &lt;td&gt; &lt;button&gt;DELETE IT&lt;/button&gt;&lt;/td&gt; 
+            &lt;td&gt; &lt;button onclick=&quot;deleteMethod()&quot;&gt;DELETE IT&lt;/button&gt;&lt;/td&gt; 
+ 
+        &lt;/tr&gt; 
+    &lt;/table&gt; 
+    --&gt;</span>
+
+
+    <span class="s0">&lt;hr&gt;</span>
+    <span class="s0">&lt;h1 </span><span class="s2">style</span><span class="s3">=&quot;</span><span class="s2">text-align</span><span class="s4">: </span><span class="s3">center&quot;</span><span class="s0">&gt;</span><span class="s4">个人信息</span><span class="s0">&lt;/h1&gt;</span>
+    <span class="s0">&lt;table </span><span class="s2">id</span><span class="s3">=&quot;myTable&quot; </span><span class="s2">align</span><span class="s3">=&quot;center&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;tr&gt;</span>
+            <span class="s0">&lt;td&gt;</span><span class="s4">姓名:</span><span class="s0">&lt;/td&gt;</span>
+            <span class="s0">&lt;td&gt;</span><span class="s4">孙鑫</span><span class="s0">&lt;/td&gt;</span>
+        <span class="s0">&lt;/tr&gt;</span>
+        <span class="s0">&lt;tr&gt;</span>
+            <span class="s0">&lt;td&gt;</span><span class="s4">性别：</span><span class="s0">&lt;/td&gt;</span>
+            <span class="s0">&lt;td&gt;</span><span class="s4">男</span><span class="s0">&lt;/td&gt;</span>
+        <span class="s0">&lt;/tr&gt;</span>
+        <span class="s0">&lt;tr&gt;</span>
+            <span class="s0">&lt;td&gt;</span><span class="s4">电话号码：</span><span class="s0">&lt;/td&gt;</span>
+            <span class="s0">&lt;td&gt;</span><span class="s4">18862187877</span><span class="s0">&lt;/td&gt;</span>
+        <span class="s0">&lt;/tr&gt;</span>
+        <span class="s0">&lt;tr&gt;</span>
+            <span class="s0">&lt;td&gt;</span><span class="s4">电子邮箱:</span><span class="s0">&lt;/td&gt;</span>
+            <span class="s0">&lt;td&gt;</span><span class="s4">xs7tng@virginia.edu</span><span class="s0">&lt;/td&gt;</span>
+        <span class="s0">&lt;/tr&gt;</span>
+        <span class="s0">&lt;tr&gt;</span>
+            <span class="s0">&lt;td&gt;</span><span class="s4">专业：</span><span class="s0">&lt;/td&gt;</span>
+            <span class="s0">&lt;td&gt;</span><span class="s4">数学计算机</span><span class="s0">&lt;/td&gt;</span>
+        <span class="s0">&lt;/tr&gt;</span>
+        <span class="s0">&lt;tr&gt;</span>
+            <span class="s0">&lt;td&gt;</span><span class="s4">学校：</span><span class="s0">&lt;/td&gt;</span>
+            <span class="s0">&lt;td&gt;</span><span class="s4">复旦大学</span><span class="s0">&lt;/td&gt;</span>
+        <span class="s0">&lt;/tr&gt;</span>
+    <span class="s0">&lt;/table&gt;</span>
+
+    <span class="s0">&lt;p&gt;&lt;/p&gt;</span>
+
+<span class="s0">&lt;script&gt;</span>
+    <span class="s5">function </span><span class="s1">deleteRow(r) {</span>
+        <span class="s5">var </span><span class="s1">i = r.parentNode.parentNode.rowIndex</span><span class="s5">;</span>
+        <span class="s5">return </span><span class="s1">document.getElementById(</span><span class="s8">&quot;myTable&quot;</span><span class="s4">).deleteRow(i)</span><span class="s5">;</span>
+    <span class="s4">}</span>
+<span class="s0">&lt;/script&gt;</span>
+<span class="s0">&lt;script </span><span class="s2">src</span><span class="s3">=&quot;SharedMethod.js&quot;</span><span class="s0">&gt;&lt;/script&gt;</span>
+
+<span class="s0">&lt;/body&gt;</span>
+<span class="s0">&lt;/html&gt;</span></pre>
+</body>
+</html>
