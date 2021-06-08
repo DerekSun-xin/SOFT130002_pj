@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SearchPage</title>
+    <link href="LayoutStyle.css" rel="stylesheet" type="text/css" />
+    <style>
+        ul.pagination{
+            padding:0;
+            margin:auto;
+            display: flex;
+            justify-content: center;
+        }
+       ul.pagination li{display: inline}
+
+        ul.pagination li a{
+            color:black;
+            float:left;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+        p.pclass{
+            text-align: center;
+            max-width: 450px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="position">
+            <a href="Front%20Page.php">首页</a>
+            <a href="SearchPage.html">搜索</a>
+            <a href="Show%20Page.html">详情</a>
+            <a href="LogInPage.html">登陆</a>
+            <a href="EnrollPage.html">注册</a>
+    </nav>
+    <p style="font-style: oblique"><strong>ArtStore</strong></p>
+    <p id="footprint"></p>
+    <hr>
+    <br><br>
+    <form id="searchbar" class="formclass" method="post" name="SearchColumn" autocomplete="off" action="SearchResult.php?">
+        <input type="search" placeholder="SearchBar" name="Search" size="50">
+        <button onclick="Search()">Search Now!</button>
+        <br>
+    </form>
+    <br>
+
+    <script>
+            var title;
+            function Search(){
+                let input = document.getElementById("searchbar").value;
+                input = input.toLowerCase();
+                input = input.split(',');
+                if(input.length==1){
+                   title=input;
+                }
+            }
+
+
+
+    </script>
+
+
+    <div style="margin-left:45%">
+        <p>All Infiltration:</p>
+        <div>
+            <input type="checkbox" name="checkBox" id="heat">
+            <label>Popularity</label>
+        </div>
+        <div>
+            <input type="checkbox" name="checkBox" id="price">
+            <label>Price</label>
+        </div>
+        <div>
+            <input type="checkbox" name="checkBox" id="description">
+            <label>Description</label>
+        </div>
+        <div>
+            <input type="checkbox" name="checkBox" id="artist">
+            <label>Artist</label>
+        </div>
+    </div>
+
+
+    <br>
+    <hr>
+
+    <p>Search Result:</p>
+    <table style="width:100%">
+        <tr>
+            <td> <a href="Show%20Page.html"><img src="img/29.jpg" width=450px height=500px></a></td>
+            <td> <a href="Show%20Page.html"><img src="img/179.jpg" width=450px height=500px></a></td>
+            <td> <a href="Show%20Page.html"><img src="img/60.jpg" width = 450px height = 500px></a></td>
+        </tr>
+        <tr>
+            <td><p class="pclass">Musicos Con Mascaras Carpet</p></td>
+            <td><p class="pclass">Nocturne in Black and Gold - The Falling Rocket</p></td>
+            <td><p class="pclass">Sunflowers</p></td>
+        </tr>
+        <tr>
+            <td><p class="pclass">Pablo Picasso</p></td>
+            <td><p class="pclass">James Abbott McNeill Whistler</p></td>
+            <td><p class="pclass">Van Gogh</p></td>
+        </tr>
+        <tr>
+            <td><p class="pclass">This bold and surrealistic painting depicts a group of musicians with their tired pup using sharp-edged geometric shapes and stunning light effects</p></td>
+            <td><p class="pclass">This painting exemplified the Art for art's sake movement</p></td>
+            <td><p class="pclass">He demonstrated that it was possible to create an image with numerous variations of a single color,
+                without any lose of eloquence</p></td>
+        </tr>
+    </table>
+
+    <ul class="pagination">
+        <li><a href=""><<</a> </li>
+        <li><a href="">1</a> </li>
+        <li><a href="">2</a> </li>
+        <li><a href="">3</a> </li>
+        <li><a href="">4</a> </li>
+        <li><a href="">5</a> </li>
+        <li><a href="">6</a>
+        <li><a href="">7</a> </li>
+        <li><a href="">>></a> </li>
+    </ul>
+
+<script src="SharedMethod.js"></script>
+</body>
+</html>

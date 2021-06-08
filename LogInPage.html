@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LogInPage</title>
+    <link href="LayoutStyle.css" rel="stylesheet" type="text/css"/>
+    <style>
+        .divclass{
+            text-align: center;
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class = position>
+      <a  href="Front%20Page.php">首页</a>
+      <a  href="SearchPage.html">搜索</a>
+      <a href="Show%20Page.html">详情</a>
+      <a href="LogInPage.html">登陆</a>
+      <a href="EnrollPage.html">注册</a>
+      <a href="PersonalCollection.php">个人收藏夹</a>
+    </nav>
+    <heading>Art Store where you find Genius and EXTROORDINARY</heading>
+    <p id="footprint"></p>
+    <hr>
+    <p style="text-align: center">ArtStore</p>
+    <p style="text-align: center">Please enter your username and password.</p>
+    <form class="formclass" method="post" name="Login" autocomplete = "off" >
+        <input type="text";   placeholder="昵称" name="Username"><br>
+        <input type="password";  placeholder="密码" name="Password"><br>
+        <p>*用户为空</p>
+        <button onclick="checkFunction()">Log In</button>
+    </form>
+    <div class="divclass">
+        <a  href="EnrollPage.html">Create Account</a><br>
+        <a  href="Front%20Page.html">返回主页</a>
+    </div>
+
+    <footer class="footer">&copy; ArtStore.Produced and maintained by Derek at 2021.3.12. All Rights Reserved </footer>
+
+    <script>
+        function checkFunction(){
+         var x = document.forms["Login"]["Username"];
+         var y = document.forms["Login"]["Password"];
+         if(x.value=="" || y.value==""){
+           return alert("账号密码输入不能为空");
+         }
+         else{
+           return alert("登录成功");
+         }
+    }
+    </script>
+<script src="SharedMethod.js"></script>
+</body>
+</html>

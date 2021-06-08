@@ -1,0 +1,64 @@
+.formclass{
+    text-align: center;
+    margin:auto;
+}
+
+.position{
+    position:fixed;
+    right:0;
+}
+
+a:link{
+    color:blue;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited{
+    color:blue;
+    text-decoration:none;
+}
+a:hover{
+    color: red;
+    text-decoration: underline;
+}
+
+.footer{
+    position: fixed;
+    left:0;
+    bottom:0;
+    width:100%;
+    background-color:black;
+    color:white;
+    text-align: center;
+}
+
+img:hover{
+    transform: scale(1.05);
+    transition-duration: 3s;
+}
+
+button{
+    color:white;
+    background-color:black;
+    padding: 5px;
+}
+button:active{
+    background-color: orange;
+}
+buttom:focus{
+    background-color:orange;
+}
+button:hover{
+    background-color: orange;
+}
+
+.slideshow{
+    max-width: 900px;
+    max-height: 600px;
+    position:relative;
+    margin:auto;
+}
+
+.slides{
+    display:none;
+}
