@@ -17,5 +17,4 @@ if(window.location.pathname=="/Lab1/Front%20Page.html"){
 }else if(window.location.pathname=="/Lab1/EnrollPage.html"){
     j="4";
 }
-sum+= localStorage.getItem(j)+">";
-document.getElementById("footprint").innerHTML= sum;*/
+ */

@@ -28,14 +28,13 @@
 <body>
 <nav class="position">
     <a href="Front%20Page.php">首页</a>
-    <a href="SearchResult.php">搜索</a>
-    <a href="Show%20Page.html">详情</a>
-    <a href="LogInPage.html">登陆</a>
-    <a href="EnrollPage.html">注册</a>
+    <a href="SearchPage.php">搜索</a>
+    <a href="LogInPage.php">登陆</a>
+    <a href="EnrollPage.php">注册</a>
     <a href="PersonalCollection.php">个人收藏夹</a>
 </nav>
 <p style="font-style: oblique"><strong>ArtStore</strong></p>
-<p id="footprint"></p>
+
 <hr>
 
 <div  style="text-align: center">
@@ -46,29 +45,6 @@
 
 <p id="demo"></p>
 <p id="emo"></p>
-
-
-
-<!--<div style="margin-left:45%">
-    <p>All Infiltration:</p>
-    <div>
-        <input type="checkbox" name="checkBox" id="heat">
-        <label>Popularity</label>
-    </div>
-    <div>
-        <input type="checkbox" name="checkBox" id="price">
-        <label>Price</label>
-    </div>
-    <div>
-        <input type="checkbox" name="checkBox" id="description">
-        <label>Description</label>
-    </div>
-    <div>
-        <input type="checkbox" name="checkBox" id="artist">
-        <label>Artist</label>
-    </div>
-</div> -->
-
 
 
 <ul class="pagination">
@@ -93,19 +69,20 @@ mysqli_select_db($_mysql, 'myartworks');
 
 //Data Receive
 $artworkID = "".$_GET['artworkID'];
-$sql = "SELECT * FROM artworks WHERE artworkID=$artworkID";
+//$sql = "SELECT * FROM artworks WHERE artworkID=$artworkID";
 $sql2 = "SELECT * FROM artworks";
 $result = $_mysql->query($sql2);
 $arrayTitle = array();
 $arrayDescription= array();
 $arrayArtist = array();
 $arrayArtworkID = array();
+$arrayView= array();
 
 //arrayTitle/arrayDescription/arrayArtist: Test Success
 if($result->num_rows>0){
     while($row = mysqli_fetch_assoc($result)) {
         $arrayTitle[] = $row['title'];
-        $arrayDescription[]= $row['description'];
+        $arrayView[]= $row['view'];
         $arrayArtist[]= $row['artist'];
         $arrayArtworkID[] = $row['artworkID'];
     }
@@ -113,30 +90,26 @@ if($result->num_rows>0){
     echo "0 results";
 }
 
-//Ajax --> Now I can use variable [input] in Javascript
 ?>
 
-
 <script>
-    //Pass msg from JS to PHP: Success
-
     //Pass PHP variable to JS code --> arrayTitle //Test successfully
     var arrayTitle = <?php echo json_encode($arrayTitle); ?>;
-    var arrayDescription = <?php echo json_encode($arrayDescription); ?>;
+    var arrayView = <?php echo json_encode($arrayView); ?>;
     var arrayArtist = <?php echo json_encode($arrayArtist); ?>;
     var arrayArtworkID = <?php echo json_encode($arrayArtworkID); ?>;
 
     //search Method
-    var title;
-    var description;
-    var artist;
-    var returnArrayTitle;
+   // var returnArrayTitle;
     var returnArrayArtworkID;
-    var returnArrayImage;
+   // var returnArrayArtist;
+   // var returnArrayView;
+
     function search(){
-        returnArrayTitle=new Array();
+       // returnArrayTitle=new Array();
         returnArrayArtworkID = new Array();
-        returnArrayImage = new Array();
+      //  returnArrayView = new Array();
+      //  returnArrayArtist = new Array();
         let input = document.getElementById("searchbar").value;
         input = input.toLowerCase();
         /*input = input.split(',');
@@ -155,65 +128,96 @@ if($result->num_rows>0){
         var i;
         for(i=0;i<arrayTitle.length;i++){
             if(arrayTitle[i].toLowerCase().includes(input)){ //mistake
-                returnArrayTitle.push(arrayTitle[i]);
+              //  returnArrayTitle.push(arrayTitle[i]);
                 returnArrayArtworkID.push(arrayArtworkID[i]);
-                returnArrayImage.push("img/arrayArtworkID[i].jpg");
+              //  returnArrayArtist.push(arrayArtist[i]);
+              //  returnArrayView.push(arrayView[i]);
             }else{
             }
         }
-        console.log(returnArrayTitle);
-        console.log(returnArrayArtworkID);
+console.log(returnArrayArtworkID);
 
-        document.getElementById("demo").innerHTML="Search Result:" +"<hr>";
-
-
-        var txt = '';
-        returnArrayTitle.forEach(myFunction);
-        document.getElementById("emo").innerHTML=txt;
-        function myFunction(value) {
-            txt = txt + value+"<br>";
-        }
-
-
-        function buildData(){
-            var arrayTable = [returnArrayArtworkID,returnArrayTitle,returnArrayImage];
-            var table = document.createElement("table");
-                var trOne = document.createElement("tr");
-                    var thOne = document.createElement("th");
-                        thOne.innerHTML = "ArtworkID";
-                    var thTwo = document.createElement("th");
-                        thTwo.innerHTML="Title";
-                    var thThree = document.createElement("th");
-                        thThree.innerHTML="Image";
-                    trOne.appendChild(thOne);
-                    trOne.appendChild(thTwo);
-                    trOne.appendChild(thThree);
-            table.appendChild(trOne);
-
-            for(var i = 0; i<arrayTable[0].length; i++){
-                var trTwo = document.createElement("tr");
-                    var tdOne = document.createElement("td");
-                        tdOne.innerHTML = arrayTable[0][i];
-                    var tdTwo = document.createElement("td");
-                        tdOne.innerHTML = arrayTable[1][i];
-                    var tdThree = document.createElement("td");
-                        tdOne.innerHTML = arrayTable[2][i];
-                    trTwo.appendChild(tdOne);
-                    trTwo.appendChild(tdTwo);
-                    trTwo.appendChild(tdThree);
-                    table.appendChild(trTwo);
-            }
-            document.body.appendChild(table);
-        }
-
-
-
-
+        window.location=encodeURI("SearchResult.php?returnArrayArtworkID="+returnArrayArtworkID);
+       // window.location=encodeURI("SearchResult.php?returnArrayArtworkID="+returnArrayArtworkID+"&returnArrayTitle="+returnArrayTitle+"&returnArrayArtist="+returnArrayArtist+"&returnArrayView="+returnArrayView);
 
     }
 
-
 </script>
+
+
+
+<?php
+echo "Search Result"."<hr>"."<br>";
+$returnArrayArtworkID=$_GET["returnArrayArtworkID"];
+$returnArrayArtworkID=explode(",",$returnArrayArtworkID);
+
+
+/*$sql3 = "SELECT * FROM artworks WHERE artworkID IN (".implode(',',$returnArrayArtworkID).")   ";
+$result3 = $_mysql->query($sql3);
+if($result3){
+    $totalCount = count($returnArrayArtworkID);
+}else{
+    $totalCount=0;
+}
+
+
+if($totalCount==0){
+    echo "No Users";
+}else{
+$pageSize=5;
+$totalPage=(int)(($totalCount%$pageSize==0)?($totalCount/$pageSize):($totalCount/$pageSize+1));
+
+if(!isset($_GET['page']))
+    $currentPage = 1;
+else
+    $currentPage= $_GET['page'];
+
+$mark = ($currentPage-1)*$pageSize;
+$firstPage=1;
+$lastPage=$totalPage;
+$prePage=($currentPage>1)?$currentPage-1:1;
+$nextPage=($totalPage-$currentPage>0)?$currentPage+1:$totalPage;
+
+/*$sql3="SELECT * FROM artworks WHERE artworkID IN (".implode(',',$returnArrayArtworkID).") LIMIT $mark , $pageSize";
+$result3 = mysqli_query($_mysql,$sql3);*/
+?>
+<div style="text-align: center ; padding: 5px">
+
+
+<table style='width: 100%'>
+<tr>
+<th>Image</th>
+<th>artworkID</th>
+<th>Title</th>
+<th>Artist</th>
+<th>Heat</th>
+<th>Description</th>
+</tr>
+
+
+<?php
+//This Section is to build up the SearchResult table
+$sql4 ="SELECT * FROM artworks WHERE artworkID IN (".implode(',',$returnArrayArtworkID).")";
+$result4 = $_mysql->query($sql4);
+
+for($j=0;$j<count($returnArrayArtworkID);$j++)
+    {
+    $row=mysqli_fetch_assoc($result4);
+?>
+    <tr>
+        <td><img style="width: 200px ; height:200px" src="img/<?php echo $row['artworkID']?>.jpg"></td>
+        <td><?php echo $row['artworkID'];?></td>
+        <td><?php echo $row['title'];?></td>
+        <td><?php echo $row['artist'];?></td>
+        <td><?php echo $row['view'];?></td>
+        <td><?php echo $row['description'];?></td>
+        <td><a href='connect_mysql.php?artworkID=<?php echo $row['artworkID']?>'>View</a></td>
+    </tr>
+<?php
+    }
+?>
+</table>
+</div>
 
 </body>
 </html>

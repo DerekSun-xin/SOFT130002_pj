@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,17 +81,41 @@ if($result->num_rows>0){  //一次RESULT找到所有信息答案，不用分好�
 
 
 <?php //This PHP is for addCarts() only.
-if(isset($_POST['addCarts()'])) {
+if(isset($_POST['addCarts()'])){
     $artworkID2 = "".$_GET['artworkID'];
     // NEED AN IF STATEMENT
-    $sql2 = "INSERT INTO carts (userID, artworkID) VALUES ('1','$artworkID2')";
-    //Consider $sql2 = "INSERT INTO carts (userID, artworkID) VALUES ('1','$artworkID2') IF NOT EXISTS artworkID = $artworkID";
-    $result2 = $GLOBALS['_mysql']->query($GLOBALS['sql2']);
+    if($_SESSION['loggedIn'] ==true && is_numeric($_SESSION['userID'])){
+        //已经登陆了
+        //If ->不能重复添加元素
+        $sql3="SELECT * FROM carts WHERE artworkID = '$artworkID2'";
+        $result3=$GLOBALS['_mysql']->query($sql3);
+        $totalRow = $result3->num_rows;
+        if($totalRow!=0){
+            echo '<html><head><script>alert("无法添加：艺术品已添加过");</script></head></html>' . "<meta http-equiv=\"refresh\" content=\"0;url=Front Page.php\">";
+        }else{
+            $sql2 = "INSERT INTO carts (userID, artworkID) VALUES ('{$_SESSION['userID']}','$artworkID2')";
+            //Consider $sql2 = "INSERT INTO carts (userID, artworkID) VALUES ('1','$artworkID2') IF NOT EXISTS artworkID = $artworkID";
+            $result2 = $GLOBALS['_mysql']->query($sql2);
+            echo '<html><head><script>alert("已添加");</script></head></html>';
+        }
+    }else{
+        echo '<html><head><script>alert("你还没有登陆");</script></head></html>' . "<meta http-equiv=\"refresh\" content=\"0;url=LogInPage.php\">";
+
+    }
 }
 ?>
 
 <nav class = position>
-    <a href="LogInPage.html">未登录</a>
+    <?php
+    if(empty($_COOKIE['username'])&&empty($_COOKIE['password'])) {
+        if(isset($_SESSION['username']))
+            echo "已登陆，欢迎您，" . $_SESSION['username'] . "<a href='LogOut.php'>退出登录</a>";
+        else
+            echo "你还没有登陆,<a href='LogInPage.php'>请登录</a>";
+    }else{
+        echo "已登陆，欢迎您:".$_COOKIE['username']."<a href='LogOut.php'>退出登录</a>";
+    }
+    ?>
 </nav>
 <heading>Art Store 登陆 or 注册</heading>
 <p id="footprint"></p>
